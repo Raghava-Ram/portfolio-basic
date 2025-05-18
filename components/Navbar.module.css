@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.nav {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: transparent;
+  padding: 0;
+  user-select: none;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.navButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C62828; /* Spider-Man red */
+  color: #A0E7FF; /* bright cyan */
+  font-size: 1.8rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px #C62828,
+    0 0 15px #A0E7FF,
+    0 0 20px #A0E7FF,
+    0 0 30px #C62828;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid black;
+  position: relative;
+  overflow: visible;
+}
+
+.navButton:hover,
+.navButton:focus {
+  transform: scale(1.3);
+  box-shadow:
+    0 0 12px #C62828,
+    0 0 25px #A0E7FF,
+    0 0 35px #A0E7FF,
+    0 0 45px #C62828;
+  color: #FFFFFF;
+  animation: glowing 1.5s ease-in-out infinite alternate;
+  outline: none;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow:
+      0 0 12px #C62828,
+      0 0 25px #A0E7FF,
+      0 0 35px #A0E7FF,
+      0 0 45px #C62828;
+  }
+  100% {
+    box-shadow:
+      0 0 20px #FF0000,
+      0 0 40px #66FFFF,
+      0 0 50px #66FFFF,
+      0 0 60px #FF0000;
+  }
+}
