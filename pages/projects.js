@@ -8,7 +8,7 @@ export default function Projects() {
     },
     {
       name: 'KidneyDiseaseClassification-DL-Project',
-      github: 'https://github.com/Raghava-Ram/KidneyDiseaseClassification-DL-Project',
+      github: 'https://github.com/Raghava-Ram/Kidney-disease-detection',
     },
   ];
 
