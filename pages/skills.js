@@ -44,7 +44,9 @@ export default function Skills() {
           <h2 className="section-title">MLOps</h2>
           <ul>
             <li>Git & Version Control</li>
-            <li>Learning .....</li>
+            <li>DVC</li>
+            <li>Mlflow</li>
+            <li>Learning.....</li>
           </ul>
         </section>
 
