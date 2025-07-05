@@ -1,13 +1,24 @@
 import Navbar from '../components/Navbar';
+import ProjectCard from '../components/ProjectCard';
 
 export default function Projects() {
   const projects = [
     {
-      name: 'Medicine-Recommendation-System',
+      image: '/med-rec-sys-img.jpg', // Placeholder for future image
+      category: 'Healthcare AI',
+      categoryIcon: <>🩺</>,
+      title: 'Medicine Recommendation System',
+      description: 'A system that recommends medicines based on patient symptoms and history using machine learning algorithms.',
+      tech: ['Python', 'Scikit-learn', 'Pandas', 'Flask'],
       github: 'https://github.com/Raghava-Ram/Medicine-Recommendation-System',
     },
     {
-      name: 'KidneyDiseaseClassification-DL-Project',
+      image: 'kidney-dis-DL.jpeg',
+      category: 'Deep Learning',
+      categoryIcon: <>🧬</>,
+      title: 'Kidney Disease Classification DL Project',
+      description: 'Deep learning project for classifying kidney disease using scanning image data and neural networks.',
+      tech: ['Python', 'TensorFlow', 'Keras', 'Pandas'],
       github: 'https://github.com/Raghava-Ram/Kidney-disease-detection',
     },
   ];
@@ -17,31 +28,18 @@ export default function Projects() {
       <Navbar />
       <div className="projects-container">
         <h1>My Projects</h1>
-
         <div className="projects-grid">
           {projects.map((project, idx) => (
-            <div key={idx} className="project-card">
-              <h3>{project.name}</h3>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="github-link"
-              >
-                View on GitHub
-              </a>
-            </div>
+            <ProjectCard key={idx} {...project} />
           ))}
         </div>
-
         <div className="coming-soon">
           New Projects Coming Soon <span>🚀</span>
         </div>
       </div>
-
       <style jsx>{`
         .projects-container {
-          max-width: 900px;
+          max-width: 1100px;
           margin: 2rem auto;
           padding: 1rem 2rem;
           font-family: 'Comic Neue', cursive;
@@ -50,7 +48,6 @@ export default function Projects() {
           border-radius: 20px;
           box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
         }
-
         h1 {
           text-align: center;
           font-size: 3rem;
@@ -58,50 +55,12 @@ export default function Projects() {
           color: #ff1a1a;
           text-shadow: 2px 2px 10px #000;
         }
-
         .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 1.5rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+          justify-content: center;
         }
-
-        .project-card {
-          background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
-          border: 2px solid #ff4d4d;
-          border-radius: 15px;
-          padding: 1.5rem;
-          text-align: center;
-          box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
-        }
-
-        h3 {
-          margin-bottom: 1rem;
-          font-size: 1.4rem;
-          color: #ff6666;
-          text-shadow: 1px 1px 3px #000;
-        }
-
-        .github-link {
-          color: #ffffff;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 1.1rem;
-          display: inline-block;
-          text-shadow: 1px 1px 3px #000;
-          transition: color 0.3s ease, text-decoration 0.3s ease;
-        }
-
-        .github-link:hover {
-          color: #ff4d4d;
-          text-decoration: underline;
-        }
-
         .coming-soon {
           margin-top: 3rem;
           text-align: center;
@@ -111,26 +70,26 @@ export default function Projects() {
           font-weight: bold;
           user-select: none;
         }
-
+        @media (max-width: 900px) {
+          .projects-grid {
+            gap: 1rem;
+          }
+        }
         @media (max-width: 600px) {
           .projects-container {
-            padding: 1rem;
+            padding: 0.5rem 0.1rem;
+            border-radius: 10px;
           }
-
           h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
           }
-
-          h3 {
-            font-size: 1.2rem;
+          .projects-grid {
+            flex-direction: column;
+            gap: 1.2rem;
+            padding: 0.2rem 0;
           }
-
-          .github-link {
-            font-size: 1rem;
-          }
-
           .coming-soon {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
           }
         }
       `}</style>

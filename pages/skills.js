@@ -1,152 +1,122 @@
 // pages/skills.js
 import Navbar from '../components/Navbar';
+import SkillCard from '../components/SkillCard';
+
+const skillSections = [
+  {
+    icon: <>📚</>,
+    title: 'Languages & Libraries',
+    color: '#4f8cff',
+    skills: ['Python', 'Java', 'SQL', 'NumPy', 'Pandas', 'Scikit-learn'],
+  },
+  {
+    icon: <>🤖</>,
+    title: 'Machine Learning',
+    color: '#3ecf8e',
+    skills: ['Supervised Learning', 'Unsupervised Learning', 'Feature Engineering', 'Model Evaluation'],
+  },
+  {
+    icon: <>🧠</>,
+    title: 'Deep Learning',
+    color: '#a259e6',
+    skills: ['Neural Networks', 'Convolutional Neural Networks (CNNs)', 'Recurrent Neural Networks (RNNs)', 'Transfer Learning'],
+  },
+  {
+    icon: <>⚙️</>,
+    title: 'MLOps',
+    color: '#ff7f50',
+    skills: ['Git & Version Control', 'DVC', 'Mlflow', 'Learning.....'],
+  },
+  {
+    icon: <>🛠️</>,
+    title: 'Frameworks & Tools',
+    color: '#ffb400',
+    skills: ['TensorFlow', 'Keras', 'Git', 'Flask', 'Streamlit'],
+  },
+  {
+    icon: <>📊</>,
+    title: 'Visualization Tools',
+    color: '#4f8cff',
+    skills: ['Tableau', 'Power BI', 'Matplotlib', 'Seaborn'],
+  },
+  {
+    icon: <>💡</>,
+    title: 'Soft Skills',
+    color: '#3ecf8e',
+    skills: ['Problem Solving', 'Teamwork', 'Communication', 'Creativity', 'Time Management'],
+  },
+];
 
 export default function Skills() {
   return (
     <>
       <Navbar />
-      <div className="skills-container">
-        <h1>My Skills</h1>
-
-        <section>
-          <h2 className="section-title">Languages & Libraries</h2>
-          <ul>
-            <li>Python</li>
-            <li>Java</li>
-            <li>SQL</li>
-            <li>NumPy</li>
-            <li>Pandas</li>
-            <li>Scikit-learn</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="section-title">Machine Learning</h2>
-          <ul>
-            <li>Supervised Learning</li>
-            <li>Unsupervised Learning</li>
-            <li>Feature Engineering</li>
-            <li>Model Evaluation</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="section-title">Deep Learning</h2>
-          <ul>
-            <li>Neural Networks</li>
-            <li>Convolutional Neural Networks (CNNs)</li>
-            <li>Recurrent Neural Networks (RNNs)</li>
-            <li>Transfer Learning</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="section-title">MLOps</h2>
-          <ul>
-            <li>Git & Version Control</li>
-            <li>DVC</li>
-            <li>Mlflow</li>
-            <li>Learning.....</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="section-title">Frameworks & Tools</h2>
-          <ul>
-            <li>TensorFlow</li>
-            <li>Keras</li>
-            <li>Git</li>
-            <li>Flask</li>
-            <li>Streamlit</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="section-title">Visualization Tools</h2>
-          <ul>
-            <li>Tableau</li>
-            <li>Power BI</li>
-            <li>Matplotlib</li>
-            <li>Seaborn</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="section-title">Soft Skills</h2>
-          <ul>
-            <li>Problem Solving</li>
-            <li>Teamwork</li>
-            <li>Communication</li>
-            <li>Creativity</li>
-            <li>Time Management</li>
-          </ul>
-        </section>
+      <div className="skills-main">
+        <h1 className="skills-heading">My Skills</h1>
+        <div className="skills-grid">
+          {skillSections.map((section, idx) => (
+            <SkillCard
+              key={section.title}
+              icon={section.icon}
+              title={section.title}
+              color={section.color}
+              skills={section.skills}
+            />
+          ))}
+        </div>
       </div>
-
       <style jsx>{`
-        .skills-container {
-          max-width: 800px;
+        .skills-main {
+          max-width: 1200px;
           margin: 2rem auto;
           padding: 1rem 2rem;
           font-family: 'Comic Neue', cursive;
-          color: #fff;
-          background: transparent;
         }
-
-        h1 {
+        .skills-heading {
           text-align: center;
           font-size: 3rem;
-          margin-bottom: 2rem;
-          color: red;
-          text-shadow: 2px 2px 5px #000;
-        }
-
-        section {
           margin-bottom: 2.5rem;
+          color: #fff;
+          font-family: 'Comic Neue', cursive;
+          font-weight: 900;
+          letter-spacing: 0.04em;
+          text-shadow: 0 4px 18px #222, 0 1px 0 #fff, 0 0 12px #C62828;
+          position: relative;
         }
-
-        .section-title {
-          color: red;
-          font-size: 1.6rem;
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-          padding: 0.3rem 0.75rem;
-          background-color: rgba(255, 255, 255, 0.2);
-          border: 2px solid red;
-          border-radius: 10px;
-          text-shadow: 1px 1px 2px black;
-          font-weight: bold;
-          display: inline-block;
-          box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        .skills-heading::after {
+          content: '';
+          display: block;
+          margin: 0.7rem auto 0 auto;
+          width: 90px;
+          height: 6px;
+          border-radius: 3px;
+          background: linear-gradient(90deg, #fff 0%, #C62828 100%);
+          opacity: 0.95;
+          box-shadow: 0 2px 8px #222a;
         }
-
-        ul {
-          list-style-type: disc;
-          padding-left: 1.5rem;
-          color: #f4f4f4;
-          font-size: 1.1rem;
-          line-height: 1.6;
+        .skills-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+          justify-content: center;
         }
-
-        li {
-          margin-bottom: 0.5rem;
+        @media (max-width: 900px) {
+          .skills-grid {
+            gap: 1rem;
+          }
         }
-
         @media (max-width: 600px) {
-          .skills-container {
-            padding: 1rem;
+          .skills-main {
+            padding: 0.5rem 0.1rem;
           }
-
-          h1 {
-            font-size: 2.2rem;
+          .skills-heading {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
           }
-
-          .section-title {
-            font-size: 1.4rem;
-          }
-
-          ul {
-            font-size: 1rem;
+          .skills-grid {
+            flex-direction: column;
+            gap: 1.2rem;
+            padding: 0.2rem 0;
           }
         }
       `}</style>

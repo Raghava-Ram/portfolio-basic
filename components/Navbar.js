@@ -24,51 +24,56 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <ul>
         <li>
+          {router.pathname === '/' && <span className={styles.activeDot} />}
           <button
             className={styles.navButton}
             onClick={() => handleClick('/')}
-            title="Home"
             aria-label="Home"
+            data-tooltip="Home"
           >
             <FaHome />
           </button>
         </li>
         <li>
+          {router.pathname === '/projects' && <span className={styles.activeDot} />}
           <button
             className={styles.navButton}
             onClick={() => handleClick('/projects')}
-            title="Projects"
             aria-label="Projects"
+            data-tooltip="Projects"
           >
             <FaCode />
           </button>
         </li>
         <li>
+          {router.pathname === '/skills' && <span className={styles.activeDot} />}
           <button
             className={styles.navButton}
             onClick={() => handleClick('/skills')}
-            title="Skills"
             aria-label="Skills"
+            data-tooltip="Skills"
           >
             <FaTools />
           </button>
         </li>
         <li>
+          {router.pathname === '/resources' && <span className={styles.activeDot} />}
           <button
             className={styles.navButton}
             onClick={() => handleClick('/resources')}
-            title="Resources"
             aria-label="Resources"
+            data-tooltip="Resources"
           >
             <FaBook />
           </button>
         </li>
         <li>
+          {router.pathname === '/contact' && <span className={styles.activeDot} />}
           <button
             className={styles.navButton}
             onClick={() => handleClick('/contact')}
-            title="Contact"
             aria-label="Contact"
+            data-tooltip="Contact"
           >
             <FaEnvelope />
           </button>

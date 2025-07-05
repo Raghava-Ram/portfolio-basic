@@ -14,7 +14,6 @@
   gap: 3rem;
   max-width: 1000px;
   overflow-x: hidden;
-  
 }
 
 .imageWrapper {
@@ -24,7 +23,8 @@
   border-radius: 25% 25% 25% 25% / 20% 20% 20% 20%;
   overflow: hidden;
   box-shadow: 0 0 20px #C62828, 0 0 8px #8B0000 inset;
-  animation: pulseRedGlow 2.5s ease-in-out infinite;
+  animation: pulseRedGlow 2.5s ease-in-out infinite, floatY 3.5s ease-in-out infinite;
+  background: rgba(255,255,255,0.04);
 }
 
 @keyframes pulseRedGlow {
@@ -34,6 +34,11 @@
   50% {
     box-shadow: 0 0 30px #FF1744, 0 0 15px #B71C1C inset;
   }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
 }
 
 .profileImage {
@@ -116,4 +121,40 @@
 @keyframes moveInLeft {
   0% { left: -150px; opacity: 0; }
   100% { left: 20px; opacity: 1; }
+}
+
+@media (max-width: 700px) {
+  .profileSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .imageWrapper {
+    width: 120px;
+    height: 120px;
+  }
+  .bioText h1 {
+    font-size: 2rem;
+  }
+  .bioText p {
+    font-size: 1.05rem;
+  }
+  .resume-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1.2rem;
+  }
+}
+@media (max-width: 450px) {
+  .profileSection {
+    padding: 0.5rem 0.1rem;
+  }
+  .bioText h1 {
+    font-size: 1.3rem;
+  }
+  .resume-button {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+  }
 }
