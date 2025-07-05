@@ -29,10 +29,7 @@ export default function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
+        {/* Fonts are loaded in _document.js */}
       </Head>
 
       <Spidey /> {/* Add Spidey here */}

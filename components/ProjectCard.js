@@ -1,11 +1,18 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function ProjectCard({ image, category, categoryIcon, title, description, tech, github }) {
   return (
     <div className="project-card">
       <div className="project-image">
         {image ? (
-          <img src={image} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <Image 
+            src={image} 
+            alt={title} 
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 600px) 90vw, 370px"
+          />
         ) : null}
       </div>
       <div className="project-content">
@@ -51,6 +58,7 @@ export default function ProjectCard({ image, category, categoryIcon, title, desc
           justify-content: center;
           color: #ff4c4c44;
           font-size: 2.5rem;
+          position: relative;
         }
         .project-content {
           padding: 1.2rem 1.3rem 1.3rem 1.3rem;

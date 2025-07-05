@@ -78,7 +78,7 @@ export default function Home() {
             />
           </div>
           <div className={styles.bioText}>
-            <h1 className="styled-name">Hi, I'm Raghava Ram</h1>
+            <h1 className="styled-name">Hi, I&apos;m Raghava Ram</h1>
             <TypingAnimation texts={titles} />
             <p className="styled-bio">{bioText}</p>
 
