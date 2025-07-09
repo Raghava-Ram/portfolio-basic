@@ -1,30 +1,30 @@
 // pages/_app.js
 import '../styles/globals.css';
-import { useEffect, useRef } from 'react';
+// import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import Spidey from '../components/Spidey';  // <-- import here
 
 export default function MyApp({ Component, pageProps, router }) {
-  const audioRef = useRef(null);
-  const nextRouter = useRouter();
+  // const audioRef = useRef(null);
+  // const nextRouter = useRouter();
 
-  useEffect(() => {
-    audioRef.current = new Audio('/sounds/thwip.mp3');
+  // useEffect(() => {
+  //   audioRef.current = new Audio('/sounds/thwip.mp3');
 
-    const handleRouteChangeStart = () => {
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
-    };
+  //   const handleRouteChangeStart = () => {
+  //     if (audioRef.current) {
+  //       audioRef.current.currentTime = 0;
+  //       audioRef.current.play();
+  //     }
+  //   };
 
-    nextRouter.events.on('routeChangeStart', handleRouteChangeStart);
-    return () => {
-      nextRouter.events.off('routeChangeStart', handleRouteChangeStart);
-    };
-  }, [nextRouter.events]);
+  //   nextRouter.events.on('routeChangeStart', handleRouteChangeStart);
+  //   return () => {
+  //     nextRouter.events.off('routeChangeStart', handleRouteChangeStart);
+  //   };
+  // }, [nextRouter.events]);
 
   return (
     <>

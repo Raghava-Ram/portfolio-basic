@@ -1,22 +1,12 @@
-import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import { useRouter } from 'next/router';
 import { FaHome, FaCode, FaTools, FaBook, FaEnvelope, FaAward } from 'react-icons/fa';
 
 export default function Navbar() {
-  const audioRef = useRef(null);
   const router = useRouter();
 
-  useEffect(() => {
-    audioRef.current = new Audio('/sounds/thwip.mp3');
-  }, []);
-
   const handleClick = (href) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
-    }
     router.push(href); // navigate manually
   };
 
