@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import { useRouter } from 'next/router';
-import { FaHome, FaCode, FaTools, FaBook, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaCode, FaTools, FaBook, FaEnvelope, FaAward } from 'react-icons/fa';
 
 export default function Navbar() {
   const audioRef = useRef(null);
@@ -43,6 +43,17 @@ export default function Navbar() {
             data-tooltip="Projects"
           >
             <FaCode />
+          </button>
+        </li>
+        <li>
+          {router.pathname === '/certifications' && <span className={styles.activeDot} />}
+          <button
+            className={styles.navButton}
+            onClick={() => handleClick('/certifications')}
+            aria-label="Certificates"
+            data-tooltip="Certificates"
+          >
+            <FaAward />
           </button>
         </li>
         <li>

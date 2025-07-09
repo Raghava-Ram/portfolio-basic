@@ -13,7 +13,7 @@ export default function Projects() {
       github: 'https://github.com/Raghava-Ram/Medicine-Recommendation-System',
     },
     {
-      image: 'kidney-dis-DL.jpeg',
+      image: '/kidney-dis-DL.jpeg',
       category: 'Deep Learning',
       categoryIcon: <>🧬</>,
       title: 'Kidney Disease Classification DL Project',
