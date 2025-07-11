@@ -7,7 +7,7 @@ const skillSections = [
     icon: <>📚</>,
     title: 'Languages & Libraries',
     color: '#4f8cff',
-    skills: ['Python', 'Java', 'SQL', 'NumPy', 'Pandas', 'Scikit-learn'],
+    skills: ['Python', 'Java', 'SQL', 'NumPy', 'Pandas', 'Scikit-learn', 'NLTK', 'YAML'],
   },
   {
     icon: <>🤖</>,
@@ -25,7 +25,7 @@ const skillSections = [
     icon: <>⚙️</>,
     title: 'MLOps',
     color: '#ff7f50',
-    skills: ['Git & Version Control', 'DVC', 'Mlflow', 'Learning.....'],
+    skills: ['Git & Version Control', 'DVC', 'Mlflow', 'Docker', 'GitHub Actions', 'AWS S3', 'AWS IAM', 'CI/CD', 'Learning.....'],
   },
   {
     icon: <>🛠️</>,
@@ -37,7 +37,7 @@ const skillSections = [
     icon: <>📊</>,
     title: 'Visualization Tools',
     color: '#4f8cff',
-    skills: ['Tableau', 'Power BI', 'Matplotlib', 'Seaborn'],
+    skills: ['Tableau', 'Power BI', 'Matplotlib', 'Seaborn', 'Plotly'],
   },
   {
     icon: <>💡</>,
