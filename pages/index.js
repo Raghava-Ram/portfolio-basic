@@ -60,6 +60,7 @@ export default function Home() {
     'Data Analyst',
     'DL Engineer',
     'AI Engineer',
+    'MLOps Engineer',
   ];
 
   return (
