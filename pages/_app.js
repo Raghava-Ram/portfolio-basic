@@ -34,7 +34,7 @@ export default function MyApp({ Component, pageProps, router }) {
         <title>Raghava Ram - ML Engineer & Data Scientist Portfolio</title>
         <meta name="title" content="Raghava Ram - ML Engineer & Data Scientist Portfolio" />
         <meta name="description" content="ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps. View my projects, skills, and experience in AI/ML." />
-        <meta name="keywords" content="ML Engineer, Data Scientist, Machine Learning, Deep Learning, AI Engineer, MLOps, Python, TensorFlow, Data Analysis, Portfolio" />
+        <meta name="keywords" content="Raghava Ram, ML Engineer, Data Scientist, Machine Learning, Deep Learning, AI Engineer, MLOps, Python, TensorFlow, Data Analysis, Portfolio" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="author" content="Raghava Ram" />
@@ -64,7 +64,7 @@ export default function MyApp({ Component, pageProps, router }) {
 
       {/* Google Analytics 4 */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        src="https://www.googletagmanager.com/gtag/js?id=G-TNCY5ZDVJ0"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -72,7 +72,7 @@ export default function MyApp({ Component, pageProps, router }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX', {
+          gtag('config', 'G-TNCY5ZDVJ0', {
             page_title: document.title,
             page_location: window.location.href,
           });
