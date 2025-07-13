@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
 import Spidey from '../components/Spidey';  // <-- import here
+import Script from 'next/script';
 
 export default function MyApp({ Component, pageProps, router }) {
   // const audioRef = useRef(null);
@@ -60,6 +61,23 @@ export default function MyApp({ Component, pageProps, router }) {
         
         {/* Fonts are loaded in _document.js */}
       </Head>
+
+      {/* Google Analytics 4 */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX', {
+            page_title: document.title,
+            page_location: window.location.href,
+          });
+        `}
+      </Script>
 
       <Spidey /> {/* Add Spidey here */}
 
