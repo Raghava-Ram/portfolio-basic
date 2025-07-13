@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://raghavaram-portfolio.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 

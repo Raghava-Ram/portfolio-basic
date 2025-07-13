@@ -1,6 +1,7 @@
 // pages/skills.js
 import Navbar from '../components/Navbar';
 import SkillCard from '../components/SkillCard';
+import Head from 'next/head';
 
 const skillSections = [
   {
@@ -50,6 +51,22 @@ const skillSections = [
 export default function Skills() {
   return (
     <>
+      <Head>
+        <title>Skills - Raghava Ram | ML Engineer & Data Scientist</title>
+        <meta name="description" content="Explore my technical skills in Machine Learning, Deep Learning, MLOps, Python, TensorFlow, Data Analysis, and more. View my expertise in AI/ML technologies." />
+        <meta name="keywords" content="Machine Learning skills, Deep Learning, MLOps, Python, TensorFlow, Data Analysis, Data Science skills, AI Engineer skills" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Skills - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta property="og:description" content="Explore my technical skills in Machine Learning, Deep Learning, MLOps, Python, TensorFlow, Data Analysis, and more." />
+        <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/skills" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Skills - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta name="twitter:description" content="Explore my technical skills in Machine Learning, Deep Learning, MLOps, Python, TensorFlow, Data Analysis, and more." />
+        <meta name="twitter:card" content="summary" />
+      </Head>
       <Navbar />
       <div className="skills-main">
         <h1 className="skills-heading">My Skills</h1>

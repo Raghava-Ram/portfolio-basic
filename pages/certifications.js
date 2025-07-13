@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import Head from 'next/head';
 
 const certifications = [
   {
@@ -78,6 +79,22 @@ const certifications = [
 export default function Certifications() {
   return (
     <>
+      <Head>
+        <title>Certifications - Raghava Ram | ML Engineer & Data Scientist</title>
+        <meta name="description" content="View my professional certifications in Data Analysis, AI, Machine Learning, AWS, Python, Power BI, Tableau, and more. Download certificates and verify my qualifications." />
+        <meta name="keywords" content="Data Analysis certification, AI certification, Machine Learning certification, AWS certification, Python certification, Power BI certification, Tableau certification, professional certificates" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Certifications - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta property="og:description" content="View my professional certifications in Data Analysis, AI, Machine Learning, AWS, Python, Power BI, Tableau, and more." />
+        <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/certifications" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Certifications - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta name="twitter:description" content="View my professional certifications in Data Analysis, AI, Machine Learning, AWS, Python, Power BI, Tableau, and more." />
+        <meta name="twitter:card" content="summary" />
+      </Head>
       <Navbar />
       <div className="certificates-container">
         <h1>My Certificates</h1>

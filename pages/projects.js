@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import ProjectCard from '../components/ProjectCard';
+import Head from 'next/head';
 
 export default function Projects() {
   const projects = [
@@ -70,6 +71,22 @@ export default function Projects() {
 
   return (
     <>
+      <Head>
+        <title>Projects - Raghava Ram | ML Engineer & Data Scientist</title>
+        <meta name="description" content="Explore my ML projects including Medicine Recommendation System, Kidney Disease Classification, Netflix Analysis, MLOps pipelines, and more. View my GitHub repositories and technical implementations." />
+        <meta name="keywords" content="ML projects, Machine Learning projects, Deep Learning projects, MLOps projects, Data Analysis projects, Python projects, GitHub repositories" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Projects - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta property="og:description" content="Explore my ML projects including Medicine Recommendation System, Kidney Disease Classification, Netflix Analysis, MLOps pipelines, and more." />
+        <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/projects" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Projects - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta name="twitter:description" content="Explore my ML projects including Medicine Recommendation System, Kidney Disease Classification, Netflix Analysis, MLOps pipelines, and more." />
+        <meta name="twitter:card" content="summary" />
+      </Head>
       <Navbar />
       <div className="projects-container">
         <h1>My Projects</h1>

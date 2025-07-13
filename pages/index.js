@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { FaDownload } from 'react-icons/fa';
+import Head from 'next/head';
 
 // TypingAnimation component
 const TypingAnimation = ({ texts, speed = 150, pause = 1000 }) => {
@@ -65,13 +66,57 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Raghava Ram - ML Engineer & Data Scientist Portfolio</title>
+        <meta name="description" content="ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps. View my projects, skills, and experience in AI/ML." />
+        <meta name="keywords" content="ML Engineer, Data Scientist, Machine Learning, Deep Learning, AI Engineer, MLOps, Python, TensorFlow, Data Analysis, Portfolio" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Raghava Ram - ML Engineer & Data Scientist Portfolio" />
+        <meta property="og:description" content="ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps." />
+        <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Raghava Ram - ML Engineer & Data Scientist Portfolio" />
+        <meta name="twitter:description" content="ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps." />
+        <meta name="twitter:card" content="summary_large_image" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Raghava Ram",
+              "jobTitle": "ML Engineer",
+              "description": "ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps.",
+              "url": "https://raghavaram-portfolio.vercel.app/",
+              "image": "https://raghavaram-portfolio.vercel.app/pfp.jpg",
+              "sameAs": [
+                "https://github.com/Raghava-Ram"
+              ],
+              "knowsAbout": [
+                "Machine Learning",
+                "Deep Learning", 
+                "Data Science",
+                "MLOps",
+                "Python",
+                "TensorFlow",
+                "Data Analysis"
+              ]
+            })
+          }}
+        />
+      </Head>
       <Navbar />
       <div className={styles.container}>
         <div className={styles.profileSection}>
           <div className={styles.imageWrapper}>
             <Image
               src="/pfp.jpg"
-              alt="My Profile Picture"
+              alt="Raghava Ram - ML Engineer and Data Scientist"
               width={150}
               height={150}
               className={styles.profileImage}

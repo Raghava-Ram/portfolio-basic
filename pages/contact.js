@@ -33,7 +33,20 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact | Your Friendly Neighborhood Coder 🕷️</title>
+        <title>Contact - Raghava Ram | ML Engineer & Data Scientist</title>
+        <meta name="description" content="Get in touch with Raghava Ram, ML Engineer and Data Scientist. Contact me for collaborations, job opportunities, or questions about AI/ML projects." />
+        <meta name="keywords" content="contact ML engineer, contact data scientist, hire ML engineer, AI consultant, machine learning expert contact" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta property="og:description" content="Get in touch with Raghava Ram, ML Engineer and Data Scientist. Contact me for collaborations, job opportunities, or questions about AI/ML projects." />
+        <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/contact" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Contact - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta name="twitter:description" content="Get in touch with Raghava Ram, ML Engineer and Data Scientist. Contact me for collaborations, job opportunities, or questions about AI/ML projects." />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <Navbar />

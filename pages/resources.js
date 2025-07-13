@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Head from 'next/head';
 
 export default function Resources() {
   const resources = [
@@ -34,6 +35,22 @@ export default function Resources() {
 
   return (
     <>
+      <Head>
+        <title>Resources - Raghava Ram | ML Engineer & Data Scientist</title>
+        <meta name="description" content="Curated list of learning resources for Machine Learning, Data Science, Python, Deep Learning, and AI. Recommended courses, tutorials, and materials for aspiring ML engineers." />
+        <meta name="keywords" content="machine learning resources, data science courses, python tutorials, deep learning courses, AI learning resources, ML engineer resources" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Resources - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta property="og:description" content="Curated list of learning resources for Machine Learning, Data Science, Python, Deep Learning, and AI." />
+        <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/resources" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:title" content="Resources - Raghava Ram | ML Engineer & Data Scientist" />
+        <meta name="twitter:description" content="Curated list of learning resources for Machine Learning, Data Science, Python, Deep Learning, and AI." />
+        <meta name="twitter:card" content="summary" />
+      </Head>
       <Navbar />
       <div className="resources-container">
         <h1>Resources</h1>
