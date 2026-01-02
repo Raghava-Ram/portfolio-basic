@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import Head from 'next/head';
 
 // TypingAnimation component
@@ -70,18 +70,18 @@ export default function Home() {
         <title>Raghava Ram - ML Engineer & Data Scientist Portfolio</title>
         <meta name="description" content="ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps. View my projects, skills, and experience in AI/ML." />
         <meta name="keywords" content="ML Engineer, Data Scientist, Machine Learning, Deep Learning, AI Engineer, MLOps, Python, TensorFlow, Data Analysis, Portfolio" />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content="Raghava Ram - ML Engineer & Data Scientist Portfolio" />
         <meta property="og:description" content="ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps." />
         <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/" />
         <meta property="og:type" content="website" />
-        
+
         {/* Twitter */}
         <meta name="twitter:title" content="Raghava Ram - ML Engineer & Data Scientist Portfolio" />
         <meta name="twitter:description" content="ML Engineer, Data Scientist, and AI enthusiast specializing in machine learning, deep learning, and MLOps." />
         <meta name="twitter:card" content="summary_large_image" />
-        
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -99,7 +99,7 @@ export default function Home() {
               ],
               "knowsAbout": [
                 "Machine Learning",
-                "Deep Learning", 
+                "Deep Learning",
                 "Data Science",
                 "MLOps",
                 "Python",
@@ -128,103 +128,74 @@ export default function Home() {
             <TypingAnimation texts={titles} />
             <p className="styled-bio">{bioText}</p>
 
-            {/* Resume Download Button */}
             <a
               href="/RAGHAVA_RAM.pdf"
               download
-              className="resume-button fadeInResume"
+              className={`${styles.resumeButton} ${styles.fadeInResume}`}
             >
               <FaDownload style={{ marginRight: '0.7em', marginBottom: '-0.15em' }} />
               Download Resume
             </a>
+
+            <div className="social-hero">
+              <a href="mailto:raghavaram219@gmail.com" aria-label="Email">
+                <FaEnvelope />
+              </a>
+              <a href="https://github.com/Raghava-Ram" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <FaGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/raghava-ram-1a9729306" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <FaLinkedin />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .resume-button {
-          display: inline-block;
-          margin-top: 2rem;
-          padding: 0.75rem 1.75rem;
-          background-color: red;
-          color: black;
-          font-weight: bold;
-          text-decoration: none;
-          border: 2px solid #ff0000;
-          border-radius: 12px;
-          font-family: 'Comic Neue', cursive;
-          font-size: 1.1rem;
-          box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-          transition: all 0.3s ease;
-        }
-
-        .resume-button:hover {
-          background-color: #ff1a1a;
-          color: white;
-          box-shadow: 0 0 20px rgba(255, 50, 50, 1);
-          transform: scale(1.05) rotate(-2deg);
-          letter-spacing: 0.04em;
-        }
-        .fadeInResume {
-          animation: fadeInUp 1.2s cubic-bezier(.4,1.5,.5,1) 0.7s both;
-        }
-        @keyframes fadeInUp {
-          0% { opacity: 0; transform: translateY(40px) scale(0.98); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
         .styled-name {
-          color: #fff;
-          font-family: 'Comic Neue', cursive, sans-serif;
-          font-size: 2.7rem;
-          font-weight: 900;
-          letter-spacing: 0.04em;
-          text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000, 0 2px 8px #000a;
-          margin-bottom: 0.7rem;
-        }
-        .styled-bio {
-          white-space: pre-line;
-          color: #A0E7FF;
-          font-size: 1.32rem;
-          margin-top: 1.1rem;
-          text-shadow: 0 1px 2.5px #fff8, 0 1px 0 #fff, 0 0 2px #A0E7FF33;
-          line-height: 1.7;
-          letter-spacing: 0.01em;
-          font-weight: 500;
-          border-radius: 0.5em;
-          padding: 0.2em 0.1em;
+          text-shadow: 2px 2px 0 var(--primary-red);
         }
         .styled-title {
-          font-family: 'Poppins', 'Comic Neue', cursive, sans-serif;
-          font-size: 1.7rem;
-          font-weight: 900;
-          min-height: 2.4rem;
-          margin-bottom: 0.3em;
-          letter-spacing: 0.04em;
-          background: linear-gradient(90deg, #A0E7FF 0%, #4f8cff 100%);
+          font-family: 'Comic Neue', cursive;
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          background: linear-gradient(90deg, #A0E7FF 0%, #fff 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-          text-shadow: 0 2px 18px #A0E7FF88, 0 1px 0 #fff, 0 0 12px #4f8cff44;
-          display: inline-block;
-          position: relative;
+          filter: drop-shadow(0 0 2px var(--primary-blue));
         }
-        .styled-title::after {
-          content: '';
-          display: block;
-          margin: 0.3em auto 0 auto;
-          width: 60%;
-          height: 4px;
-          border-radius: 2px;
-          background: linear-gradient(90deg, #A0E7FF 0%, #4f8cff 100%);
-          opacity: 0.7;
-          animation: underlineFadeIn 1.2s cubic-bezier(.4,1.5,.5,1) 0.2s both;
+
+        .social-hero {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-top: 2rem;
         }
-        @keyframes underlineFadeIn {
-          0% { width: 0; opacity: 0; }
-          100% { width: 60%; opacity: 0.7; }
+
+        .social-hero a {
+          font-size: 1.8rem;
+          color: rgba(255, 255, 255, 0.8);
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
-     `}</style>
+
+        .social-hero a:hover {
+          color: var(--primary-red);
+          transform: translateY(-5px);
+          background: rgba(255, 76, 76, 0.1);
+          border-color: var(--primary-red);
+          box-shadow: 0 0 15px rgba(255, 76, 76, 0.4);
+        }
+      `}</style>
     </>
   );
 }

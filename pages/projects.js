@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import ProjectCard from '../components/ProjectCard';
+import FadeInSection from '../components/FadeInSection';
 import Head from 'next/head';
 
 export default function Projects() {
@@ -75,13 +76,13 @@ export default function Projects() {
         <title>Projects - Raghava Ram | ML Engineer & Data Scientist</title>
         <meta name="description" content="Explore my ML projects including Medicine Recommendation System, Kidney Disease Classification, Netflix Analysis, MLOps pipelines, and more. View my GitHub repositories and technical implementations." />
         <meta name="keywords" content="ML projects, Machine Learning projects, Deep Learning projects, MLOps projects, Data Analysis projects, Python projects, GitHub repositories" />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content="Projects - Raghava Ram | ML Engineer & Data Scientist" />
         <meta property="og:description" content="Explore my ML projects including Medicine Recommendation System, Kidney Disease Classification, Netflix Analysis, MLOps pipelines, and more." />
         <meta property="og:url" content="https://raghavaram-portfolio.vercel.app/projects" />
         <meta property="og:type" content="website" />
-        
+
         {/* Twitter */}
         <meta name="twitter:title" content="Projects - Raghava Ram | ML Engineer & Data Scientist" />
         <meta name="twitter:description" content="Explore my ML projects including Medicine Recommendation System, Kidney Disease Classification, Netflix Analysis, MLOps pipelines, and more." />
@@ -92,67 +93,148 @@ export default function Projects() {
         <h1>My Projects</h1>
         <div className="projects-grid">
           {projects.map((project, idx) => (
-            <ProjectCard key={idx} {...project} />
+            <FadeInSection key={idx}>
+              <ProjectCard {...project} />
+            </FadeInSection>
           ))}
         </div>
         <div className="coming-soon">
-          New Projects Coming Soon <span>🚀</span>
+          FORGING NEW PROJECTS ... DEPLOYMENT IMMINENT <span>🏗️</span>
         </div>
       </div>
       <style jsx>{`
         .projects-container {
-          max-width: 1100px;
-          margin: 2rem auto;
-          padding: 1rem 2rem;
-          font-family: 'Comic Neue', cursive;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 3rem 2rem;
           color: #fff;
-          background: rgba(0, 0, 0, 0.6);
-          border-radius: 20px;
-          box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+          /* Removed background box to let global background shine */
         }
         h1 {
           text-align: center;
-          font-size: 3rem;
-          margin-bottom: 2rem;
-          color: #ff1a1a;
-          text-shadow: 2px 2px 10px #000;
+          font-size: 4rem;
+          margin-bottom: 4rem;
+          color: #fff;
+          font-family: 'Orbitron', sans-serif; /* Tech/Modern Look */
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          position: relative;
+          text-shadow: 2px 2px 0px var(--primary-red);
         }
+        
+        h1::before, h1::after {
+          content: 'MY PROJECTS';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #14141e00; /* Transparent */
+        }
+
+        h1::before {
+          left: 2px;
+          text-shadow: -1px 0 #00ffff;
+          clip: rect(24px, 550px, 90px, 0);
+          animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        h1::after {
+          left: -2px;
+          text-shadow: -1px 0 #ff00c1;
+          clip: rect(85px, 550px, 140px, 0);
+          animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+          0% { clip: rect(14px, 9999px, 122px, 0); }
+          5% { clip: rect(78px, 9999px, 86px, 0); }
+          10% { clip: rect(44px, 9999px, 66px, 0); }
+          15% { clip: rect(12px, 9999px, 55px, 0); }
+          20% { clip: rect(89px, 9999px, 2px, 0); }
+          25% { clip: rect(28px, 9999px, 96px, 0); }
+          30% { clip: rect(64px, 9999px, 14px, 0); }
+          35% { clip: rect(54px, 9999px, 10px, 0); }
+          40% { clip: rect(22px, 9999px, 20px, 0); }
+          45% { clip: rect(4px, 9999px, 83px, 0); }
+          50% { clip: rect(96px, 9999px, 49px, 0); }
+          55% { clip: rect(100px, 9999px, 30px, 0); }
+          60% { clip: rect(6px, 9999px, 67px, 0); }
+          65% { clip: rect(48px, 9999px, 88px, 0); }
+          70% { clip: rect(55px, 9999px, 11px, 0); }
+          75% { clip: rect(2px, 9999px, 5px, 0); }
+          80% { clip: rect(74px, 9999px, 4px, 0); }
+          85% { clip: rect(33px, 9999px, 99px, 0); }
+          90% { clip: rect(11px, 9999px, 12px, 0); }
+          95% { clip: rect(98px, 9999px, 8px, 0); }
+          100% { clip: rect(56px, 9999px, 56px, 0); }
+        }
+        
+        @keyframes glitch-anim-2 {
+          0% { clip: rect(65px, 9999px, 100px, 0); }
+          100% { clip: rect(12px, 9999px, 65px, 0); }
+        }
+
         .projects-grid {
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
           gap: 2rem;
           justify-content: center;
         }
+        
         .coming-soon {
-          margin-top: 3rem;
+          margin-top: 5rem;
           text-align: center;
           font-size: 1.5rem;
-          color: #ff6666;
-          text-shadow: 0 0 8px #ff4d4d;
-          font-weight: bold;
-          user-select: none;
+          color: #fff;
+          font-family: 'Orbitron', sans-serif;
+          letter-spacing: 3px;
+          padding: 3rem;
+          border: 1px solid var(--primary-red);
+          border-radius: 20px;
+          background: rgba(20, 20, 30, 0.6);
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 0 20px rgba(255, 76, 76, 0.1);
+          animation: pulse-border 2s infinite alternate;
         }
-        @media (max-width: 900px) {
+
+        .coming-soon::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 76, 76, 0.2), transparent);
+          animation: scan-line 3s infinite linear;
+        }
+
+        @keyframes pulse-border {
+          0% { box-shadow: 0 0 10px rgba(255, 76, 76, 0.1), inset 0 0 5px rgba(255, 76, 76, 0.1); border-color: rgba(255, 76, 76, 0.3); }
+          100% { box-shadow: 0 0 25px rgba(255, 76, 76, 0.4), inset 0 0 15px rgba(255, 76, 76, 0.2); border-color: var(--primary-red); }
+        }
+
+        @keyframes scan-line {
+          0% { left: -100%; }
+          100% { left: 100%; }
+        }
+
+        @media (max-width: 1100px) {
           .projects-grid {
-            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
           }
+        }
+        @media (max-width: 700px) {
+          .projects-grid {
+            grid-template-columns: 1fr;
+          }
+          h1 { font-size: 2.8rem; }
         }
         @media (max-width: 600px) {
-          .projects-container {
-            padding: 0.5rem 0.1rem;
-            border-radius: 10px;
-          }
-          h1 {
-            font-size: 2rem;
-          }
-          .projects-grid {
-            flex-direction: column;
-            gap: 1.2rem;
-            padding: 0.2rem 0;
-          }
-          .coming-soon {
-            font-size: 1.1rem;
-          }
+          .projects-container { padding: 2rem 1rem; }
+          h1 { font-size: 2.2rem; }
         }
       `}</style>
     </>

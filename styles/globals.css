@@ -1,43 +1,56 @@
 /* styles/globals.css */
 
-body, html, #__next {
+body,
+html,
+#__next {
   margin: 0;
   height: 100%;
   font-family: 'Orbitron', sans-serif;
-  color: #e0f7fa; /* light cyan text */
+  color: #e0f7fa;
+  /* light cyan text */
   position: relative;
   overflow-x: hidden;
   cursor: url('/spidey-cursor.png'), auto;
   font-family: 'Comic Neue', sans-serif;
-  
+
+  /* Spidey Theme Variables */
+  --primary-red: #ff4c4c;
+  --primary-blue: #A0E7FF;
+  --bg-dark: #14141e;
+  --glass-bg: rgba(20, 20, 30, 0.65);
+  --glass-border: rgba(255, 76, 76, 0.3);
+  --neon-glow: 0 0 10px var(--primary-red);
 }
 
 /* Add a full-screen background image with an overlay */
-#__next::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('/spider-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  opacity: 1;  /* control image visibility */
-  z-index: -2;
-}
-
-/* Overlay with diagonal red and blue-green split */
+/* Overlay - Uniform dark for better readability */
 #__next::after {
   content: "";
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(198,40,40,0.6) 50%,  /* #C62828 with opacity */
-    rgba(20,50,60,0.6) 50%    /* #14323C with opacity */
-  );
-  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 5, 5, 0.75);
+  /* Warmer dark overlay to match red theme */
+  /* Uniform dark overlay */
+  z-index: -2;
+  /* Behind canvas */
 }
 
-
-
-
-
-
+/* Background image - slightly more subtly blended */
+#__next::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/spider-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.8;
+  /* Increased visibility */
+  filter: contrast(1.3) brightness(1.1);
+  /* Boost contrast */
+  z-index: -3;
+}

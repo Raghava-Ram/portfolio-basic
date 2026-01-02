@@ -6,11 +6,11 @@ export default function ProjectCard({ image, category, categoryIcon, title, desc
     <div className="project-card">
       <div className="project-image">
         {image ? (
-          <Image 
-            src={image} 
-            alt={title} 
+          <Image
+            src={image}
+            alt={title}
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', transition: 'transform 0.4s ease' }}
             sizes="(max-width: 600px) 90vw, 370px"
           />
         ) : null}
@@ -33,25 +33,30 @@ export default function ProjectCard({ image, category, categoryIcon, title, desc
       </div>
       <style jsx>{`
         .project-card {
-          background: rgba(20, 20, 30, 0.85);
-          border: 2.5px solid #ff4c4c;
+          background: var(--glass-bg);
+          border: 1px solid rgba(255, 76, 76, 0.2); /* Thinner, consistent with index */
           border-radius: 32px;
-          box-shadow: 0 0 18px 2px #ff4c4c44;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
           display: flex;
           flex-direction: column;
-          min-width: 300px;
-          max-width: 370px;
-          margin: 1rem;
+          width: 100%;
+          /* Removed fixed max-width and margin to fit grid */
           overflow: hidden;
-          transition: transform 0.18s, box-shadow 0.2s;
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
         }
         .project-card:hover {
-          transform: translateY(-6px) scale(1.03);
-          box-shadow: 0 0 32px 4px #ff4c4c99;
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 12px 24px rgba(0,0,0,0.4), var(--neon-glow);
+          border-color: var(--primary-red);
+        }
+        .project-card:hover .project-image img {
+          transform: scale(1.1);
         }
         .project-image {
           width: 100%;
-          height: 140px;
+          height: 180px; /* Slightly taller for better view */
           background: linear-gradient(135deg, #2d2d3a 60%, #ff4c4c22 100%);
           display: flex;
           align-items: center;
@@ -59,91 +64,90 @@ export default function ProjectCard({ image, category, categoryIcon, title, desc
           color: #ff4c4c44;
           font-size: 2.5rem;
           position: relative;
+          overflow: hidden; /* For image zoom */
         }
         .project-content {
-          padding: 1.2rem 1.3rem 1.3rem 1.3rem;
+          padding: 1.5rem;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          flex-grow: 1; /* Ensure content fills height */
+          height: 100%; /* Explicit height for flex alignment */
         }
-        .project-category {
-          display: flex;
-          align-items: center;
-          margin-bottom: 0.7rem;
-        }
-        .category-icon {
-          font-size: 1.3rem;
-          margin-right: 0.5rem;
-          color: #a259e6;
-        }
-        .category-text {
-          color: #a259e6;
-          font-family: 'Comic Neue', cursive, sans-serif;
-          font-weight: 700;
-          font-size: 1.08rem;
-        }
-        h3 {
-          margin: 0 0 0.7rem 0;
-          font-size: 1.25rem;
-          color: #ff4c4c;
-          font-family: 'Comic Neue', cursive, sans-serif;
-          font-weight: 700;
-          text-shadow: 1px 1px 6px #000, 0 0 8px #ff4c4c44;
-        }
-        .project-desc {
-          color: #eee;
-          font-size: 1.01rem;
-          margin-bottom: 1.1rem;
-          min-height: 48px;
-        }
+        /* ... existing styles ... */
         .project-tech-list {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.5rem;
-          margin-bottom: 1.1rem;
+          gap: 0.6rem;
+          margin-bottom: 1.5rem;
+          /* removed margin-top: auto to let tags sit naturally */
         }
         .project-tech-tag {
-          background: rgba(255, 76, 76, 0.13);
+          background: rgba(255, 76, 76, 0.08);
           color: #fff;
-          border: 1.5px solid #ff4c4c;
-          border-radius: 12px;
-          padding: 0.32em 0.9em;
-          font-size: 0.98rem;
-          font-family: 'Comic Neue', cursive, sans-serif;
+          border: 1px solid rgba(255, 76, 76, 0.4);
+          border-radius: 20px;
+          padding: 0.4em 1em;
+          font-size: 0.85rem;
+          font-family: 'Poppins', sans-serif;
           font-weight: 500;
-          box-shadow: 0 1px 6px #ff4c4c22;
-          text-shadow: 1px 1px 4px #000;
-          transition: box-shadow 0.25s, transform 0.18s, background 0.18s;
-          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+          cursor: default;
         }
         .project-tech-tag:hover {
-          box-shadow: 0 0 16px 4px #ff4c4c, 0 1px 6px #ff4c4c22;
-          background: rgba(255, 76, 76, 0.22);
-          transform: scale(1.12) rotate(-2deg);
-          z-index: 1;
+          background: rgba(255, 76, 76, 0.25);
+          box-shadow: 0 5px 15px rgba(255, 76, 76, 0.3);
+          border-color: var(--primary-red);
+          transform: translateY(-4px) scale(1.05); /* Moving effect */
         }
         .github-link {
-          color: #fff;
-          background: #ff4c4c;
-          border-radius: 8px;
-          padding: 0.5em 1.2em;
-          font-weight: bold;
-          font-size: 1.05rem;
+          position: relative;
+          color: var(--primary-red);
+          background: transparent;
+          border: 2px solid var(--primary-red);
+          border-radius: 12px;
+          padding: 0.5em 1.2em; /* Reduced padding */
+          font-weight: 700;
+          font-size: 0.9rem; /* Reduced font size */
+          font-family: 'Orbitron', sans-serif; /* Tech font */
           text-decoration: none;
-          margin-top: 0.5rem;
-          box-shadow: 0 2px 8px #ff4c4c33;
-          transition: background 0.2s, color 0.2s;
-          align-self: flex-end;
+          margin-top: auto;
+          text-align: center;
+          letter-spacing: 1px;
+          overflow: hidden;
+          transition: all 0.4s ease;
+          z-index: 1;
+          text-transform: uppercase;
+          width: 100%;
+          align-self: center;
         }
+
+        .github-link::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0;
+          width: 0%;
+          height: 100%;
+          background: var(--primary-red);
+          z-index: -1;
+          transition: width 0.4s ease;
+        }
+
         .github-link:hover {
-          background: #fff;
-          color: #ff4c4c;
+          color: #fff;
+          box-shadow: 0 0 20px var(--primary-red);
+          transform: translateY(-3px);
+          border-color:transparent;
+        }
+
+        .github-link:hover::before {
+          width: 100%;
         }
         @media (max-width: 600px) {
           .project-card {
-            min-width: 90vw;
-            max-width: 98vw;
-            margin: 0.5rem auto;
+            min-width: unset;
+            max-width: 100%;
+            margin: 0;
             border-radius: 18px;
           }
           .project-image {
