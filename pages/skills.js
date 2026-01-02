@@ -273,7 +273,7 @@ export default function Skills() {
 
         @media (max-width: 600px) {
           .skills-main {
-            padding: 2rem 1rem;
+            padding: 2rem 1rem 100px 1rem; /* Extra padding for bottom navbar */
           }
           .skills-heading {
             font-size: 2.2rem;

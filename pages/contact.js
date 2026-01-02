@@ -95,11 +95,26 @@ export default function Contact() {
 
       <style jsx>{`
         .contact-main {
-          min-height: calc(100vh - 80px); /* Adjust for navbar */
+          min-height: calc(100vh - 80px);
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 2rem;
+        }
+
+        @media (max-width: 600px) {
+          .contact-main {
+            min-height: 100vh;
+            padding: 2rem 1rem 120px 1rem; /* Clears bottom navbar */
+            align-items: flex-start; /* Better scrolling on small screens */
+          }
+          .contact-card {
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+          }
+          .contact-heading {
+            font-size: 2.2rem;
+          }
         }
 
         .contact-card {

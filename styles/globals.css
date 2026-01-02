@@ -3,15 +3,17 @@
 body,
 html,
 #__next {
+  padding: 0;
   margin: 0;
   height: 100%;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #e0f7fa;
   /* light cyan text */
   position: relative;
   overflow-x: hidden;
   cursor: url('/spidey-cursor.png'), auto;
   font-family: 'Comic Neue', sans-serif;
+  width: 100%;
 
   /* Spidey Theme Variables */
   --primary-red: #ff4c4c;

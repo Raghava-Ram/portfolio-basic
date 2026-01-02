@@ -233,7 +233,9 @@ export default function Projects() {
           h1 { font-size: 2.8rem; }
         }
         @media (max-width: 600px) {
-          .projects-container { padding: 2rem 1rem; }
+          .projects-container {
+            padding: 2rem 1rem 100px 1rem; /* Extra padding for bottom navbar */
+          }
           h1 { font-size: 2.2rem; }
         }
       `}</style>

@@ -1,12 +1,12 @@
 // pages/_app.js
 import '../styles/globals.css';
-// import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import Head from 'next/head';
-import Spidey from '../components/Spidey';  // <-- import here
+import Spidey from '../components/Spidey';
 import LoadingScreen from '../components/LoadingScreen';
 import WebBackground from '../components/WebBackground';
+import ScrollToTop from '../components/ScrollToTop';
 import Script from 'next/script';
 import { useState, useEffect } from 'react';
 
@@ -14,7 +14,7 @@ export default function MyApp({ Component, pageProps, router }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Optional: Check if it's the first visit using sessionStorage if you only want to show it once per session
+    // Optional: Check if it's the first visit using sessionStorage
     // const hasLoaded = sessionStorage.getItem('hasLoaded');
     // if (hasLoaded) {
     //   setLoading(false);
@@ -25,24 +25,6 @@ export default function MyApp({ Component, pageProps, router }) {
     setLoading(false);
     // sessionStorage.setItem('hasLoaded', 'true');
   };
-  // const audioRef = useRef(null);
-  // const nextRouter = useRouter();
-
-  // useEffect(() => {
-  //   audioRef.current = new Audio('/sounds/thwip.mp3');
-
-  //   const handleRouteChangeStart = () => {
-  //     if (audioRef.current) {
-  //       audioRef.current.currentTime = 0;
-  //       audioRef.current.play();
-  //     }
-  //   };
-
-  //   nextRouter.events.on('routeChangeStart', handleRouteChangeStart);
-  //   return () => {
-  //     nextRouter.events.off('routeChangeStart', handleRouteChangeStart);
-  //   };
-  // }, [nextRouter.events]);
 
   return (
     <>
@@ -96,7 +78,8 @@ gtag('config', 'G-TNCY5ZDVJ0', {
 `}
       </Script>
 
-      <Spidey /> {/* Add Spidey here */}
+      <Spidey />
+      <ScrollToTop />
       <WebBackground />
       {loading && <LoadingScreen onFinished={handleLoadingFinished} />}
 
