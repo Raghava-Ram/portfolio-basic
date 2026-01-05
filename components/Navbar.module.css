@@ -202,30 +202,36 @@
 
 @media (max-width: 1100px) {
   .nav {
-    right: 0;
-    left: 0;
+    position: fixed;
     top: auto;
-    bottom: 0;
-    width: 100vw;
+    bottom: 2rem;
+    left: 50%;
+    right: auto;
+    width: auto;
+    max-width: 95vw;
+    transform: translateX(-50%);
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
-    border-radius: 0;
-    background: rgba(30, 30, 40, 0.98);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    transform: none;
-    /* Reset transform from desktop */
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    background: rgba(30, 30, 40, 0.75);
+    /* Slight transparency for glass effect */
+    backdrop-filter: blur(16px) saturate(1.8);
+    -webkit-backdrop-filter: blur(16px) saturate(1.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
   }
 
   .nav ul {
     flex-direction: row;
-    gap: 1.5rem;
-    width: 100%;
+    gap: 1.2rem;
+    width: auto;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
   .nav li {
@@ -234,34 +240,37 @@
   }
 
   .navButton {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.8rem;
+    height: 3.8rem;
     font-size: 1.8rem;
     border-radius: 50%;
     margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .activeDot {
     left: 50%;
-    top: -0.5rem;
+    top: auto;
+    bottom: -0.6rem;
     transform: translateX(-50%);
     width: 0.5rem;
     height: 0.5rem;
     box-shadow: 0 0 8px #A0E7FF, 0 0 12px #C62828;
   }
 
-  /* Adjust tooltips for mobile bottom nav */
+  /* Tooltips above the pill */
   .navButton[data-tooltip]:hover::after,
   .navButton[data-tooltip]:focus::after {
     left: 50%;
     right: auto;
     top: auto;
-    bottom: 130%;
-    /* Position above the button */
+    bottom: 140%;
     transform: translateX(-50%);
     animation: tooltipFadeInTop 0.25s;
     font-size: 0.9rem;
     white-space: nowrap;
     margin-left: 0;
+    background: rgba(30, 30, 40, 0.95);
+    border: 1px solid #A0E7FF;
   }
 }
