@@ -213,8 +213,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1rem 1.5rem;
-    border-radius: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 3.5rem;
     background: rgba(30, 30, 40, 0.75);
     /* Slight transparency for glass effect */
     backdrop-filter: blur(16px) saturate(1.8);
@@ -226,7 +226,7 @@
 
   .nav ul {
     flex-direction: row;
-    gap: 1.2rem;
+    gap: 1.4rem;
     width: auto;
     justify-content: center;
     align-items: center;
@@ -240,9 +240,9 @@
   }
 
   .navButton {
-    width: 3.8rem;
-    height: 3.8rem;
-    font-size: 1.8rem;
+    width: 4.2rem;
+    height: 4.2rem;
+    font-size: 2rem;
     border-radius: 50%;
     margin: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
