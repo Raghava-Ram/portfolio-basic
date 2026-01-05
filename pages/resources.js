@@ -365,7 +365,7 @@ export default function Resources() {
            h1 { font-size: 2.8rem; }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1100px) {
           .resources-container {
             padding: 2rem 1rem 120px 1rem; /* Extra padding for bottom navbar */
           }
