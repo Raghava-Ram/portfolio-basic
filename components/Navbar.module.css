@@ -131,9 +131,10 @@
 .navButton[data-tooltip]:focus::after {
   content: attr(data-tooltip);
   position: absolute;
-  left: 50%;
-  top: -0.7rem;
-  transform: translate(-50%, -100%);
+  right: 120%;
+  /* Position to the left of the button */
+  top: 50%;
+  transform: translateY(-50%);
   background: rgba(30, 30, 40, 0.95);
   color: #fff;
   padding: 0.35em 0.9em;
@@ -146,9 +147,33 @@
   opacity: 1;
   z-index: 10;
   margin-left: 0;
-  margin-top: -0.3rem;
+  margin-top: 0;
   border: 1.5px solid #A0E7FF;
-  animation: tooltipFadeIn 0.25s;
+  animation: tooltipFadeInSide 0.25s;
+}
+
+@keyframes tooltipFadeInSide {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(10px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+  }
+}
+
+@keyframes tooltipFadeInTop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%) translateY(10px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) translateY(0) scale(1);
+  }
 }
 
 @keyframes tooltipFadeIn {
@@ -175,7 +200,7 @@
   transition: color 0.2s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .nav {
     right: 0;
     left: 0;
@@ -185,15 +210,19 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0.3rem 0.2rem 0.5rem 0.2rem;
+    padding: 0.5rem;
     border-radius: 0;
-    background: rgba(30, 30, 40, 0.95);
-    box-shadow: 0 -2px 16px #C6282844;
+    background: rgba(30, 30, 40, 0.98);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transform: none;
+    /* Reset transform from desktop */
   }
 
   .nav ul {
     flex-direction: row;
-    gap: 1.2rem;
+    gap: 1.5rem;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -205,30 +234,34 @@
   }
 
   .navButton {
-    width: 3.2rem;
-    height: 3.2rem;
-    font-size: 2.1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.8rem;
     border-radius: 50%;
-    margin: 0 0.1rem;
+    margin: 0;
   }
 
   .activeDot {
     left: 50%;
-    top: -0.7rem;
+    top: -0.5rem;
     transform: translateX(-50%);
-    width: 0.6rem;
-    height: 0.6rem;
+    width: 0.5rem;
+    height: 0.5rem;
     box-shadow: 0 0 8px #A0E7FF, 0 0 12px #C62828;
   }
 
+  /* Adjust tooltips for mobile bottom nav */
   .navButton[data-tooltip]:hover::after,
   .navButton[data-tooltip]:focus::after {
     left: 50%;
-    top: -0.7rem;
-    transform: translate(-50%, -100%);
-    font-size: 0.95rem;
-    min-width: 70px;
-    max-width: 90vw;
-    white-space: pre-line;
+    right: auto;
+    top: auto;
+    bottom: 130%;
+    /* Position above the button */
+    transform: translateX(-50%);
+    animation: tooltipFadeInTop 0.25s;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    margin-left: 0;
   }
 }

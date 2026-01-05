@@ -7,6 +7,20 @@ import { FaBook, FaLaptopCode, FaDatabase, FaVideo, FaExternalLinkAlt } from 're
 export default function Resources() {
   const resources = [
     {
+      name: 'Git commands',
+      link: 'https://docs.google.com/document/d/1saORG2CXuSHWBKGwK0vlmQ1F55LL4kbIUsYYNzXqfOg/edit?usp=sharing',
+      icon: <SiGithub />,
+      category: 'Document',
+      description: 'Git commands for version control.'
+    },
+    {
+      name: 'AI Engineer Roadmap',
+      link: 'https://drive.google.com/drive/folders/16mLuCBh9t717qZOT8ss3CdQm-wjm1Co-?usp=sharing',
+      icon: <FaLaptopCode />,
+      category: 'Document',
+      description: 'AI Engineer Roadmap for beginners.'
+    },
+    {
       name: 'Introduction to Python',
       link: 'https://courses.analyticsvidhya.com/courses/introduction-to-data-science',
       icon: <SiPython />,
@@ -109,9 +123,11 @@ export default function Resources() {
 
       <style jsx>{`
         .resources-container {
-          max-width: 1200px;
+          max-width: 1400px;
           margin: 0 auto;
-          padding: 3rem 2rem;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 3rem 10rem;
           color: #fff;
         }
 
@@ -184,7 +200,7 @@ export default function Resources() {
         .resources-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2.5rem;
+          gap: 6rem;
           justify-content: center;
         }
 
@@ -209,6 +225,7 @@ export default function Resources() {
           flex-direction: column;
           align-items: center;
           height: 100%;
+          justify-content: center;
           position: relative;
           overflow: hidden;
         }
@@ -348,9 +365,9 @@ export default function Resources() {
            h1 { font-size: 2.8rem; }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
           .resources-container {
-            padding: 2rem 1rem 100px 1rem; /* Extra padding for bottom navbar */
+            padding: 2rem 1rem 120px 1rem; /* Extra padding for bottom navbar */
           }
           h1 {
             font-size: 2.2rem;

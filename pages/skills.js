@@ -141,9 +141,11 @@ export default function Skills() {
       </div>
       <style jsx>{`
         .skills-main {
-          max-width: 1200px;
+          max-width: 1400px;
           margin: 0 auto;
-          padding: 3rem 2rem;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 3rem 10rem;
           color: #fff;
         }
         
@@ -216,12 +218,12 @@ export default function Skills() {
         .skills-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2.5rem;
+          gap: 4rem;
           justify-content: center;
         }
 
         .coming-soon {
-          margin-top: 5rem;
+          margin-top: 12rem;
           text-align: center;
           font-size: 1.5rem;
           color: #fff;
@@ -271,9 +273,9 @@ export default function Skills() {
           .skills-heading { font-size: 2.8rem; }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
           .skills-main {
-            padding: 2rem 1rem 100px 1rem; /* Extra padding for bottom navbar */
+            padding: 2rem 1rem 120px 1rem; /* Extra padding for bottom navbar */
           }
           .skills-heading {
             font-size: 2.2rem;

@@ -136,7 +136,9 @@ export default function Certifications() {
         .certificates-container {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 3rem 2rem;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 3rem 10rem 3rem 2rem;
           color: #fff;
         }
         
@@ -209,7 +211,7 @@ export default function Certifications() {
         .certificates-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2.5rem;
+          gap: 4rem;
           justify-content: center;
         }
 

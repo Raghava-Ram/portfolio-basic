@@ -28,12 +28,13 @@ export default function SkillCard({ icon, title, skills }) {
           box-shadow: 0 4px 16px rgba(0,0,0,0.3);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
-          padding: 2rem;
+          -webkit-backdrop-filter: blur(12px);
+          padding: 1.5rem;
           width: 100%;
-          height: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
           transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .skill-card:hover {
