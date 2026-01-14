@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar';
 import Head from 'next/head';
 import FadeInSection from '../components/FadeInSection';
 import { SiPython, SiCoursera, SiKaggle, SiGithub, SiPytorch, SiTableau } from 'react-icons/si';
-import { FaBook, FaLaptopCode, FaDatabase, FaVideo, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaBook, FaLaptopCode, FaDatabase, FaVideo, FaExternalLinkAlt, FaMicrochip, FaNetworkWired } from 'react-icons/fa';
 
 export default function Resources() {
   const resources = [
@@ -18,6 +18,13 @@ export default function Resources() {
       link: 'https://drive.google.com/drive/folders/16mLuCBh9t717qZOT8ss3CdQm-wjm1Co-?usp=sharing',
       icon: <FaLaptopCode />,
       category: 'Document',
+      description: 'AI Engineer Roadmap for beginners.'
+    },
+    {
+      name: 'AI Engineer Roadmap website',
+      link: 'https://ai-engineer-roadmap-eight.vercel.app/',
+      icon: <FaNetworkWired />,
+      category: 'Roadmap',
       description: 'AI Engineer Roadmap for beginners.'
     },
     {

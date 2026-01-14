@@ -24,6 +24,16 @@ export default function Projects() {
       github: 'https://github.com/Raghava-Ram/Kidney-disease-detection',
     },
     {
+      image: '/ai-engineer.jpg',
+      category: 'AI Engineer',
+      categoryIcon: <>🤖</>,
+      title: 'AI Engineer Roadmap',
+      description: 'AI Engineer roadmap for building and deploying AI models.',
+      tech: ['python','AI', 'ML', 'DL', 'NLP', 'Computer Vision'],
+      github: 'https://github.com/Raghava-Ram/AI-Engineer-Roadmap',
+      live: 'https://ai-engineer-roadmap-eight.vercel.app/',
+    },
+    {
       image: '/netflix-logo.jpeg',
       category: 'Data Analysis',
       categoryIcon: <>📊</>,
